@@ -24,7 +24,7 @@ RUN chmod +x /token.sh /entrypoint.sh \
     && usermod -aG sudo runner \
     && usermod -aG docker runner \
     && chown runner /_work/ /opt/hostedtoolcache/
-USER runner
 
 ENTRYPOINT ["/entrypoint.sh"]
+USER runner
 CMD ["./bin/Runner.Listener", "run", "--startuptype", "service"]
